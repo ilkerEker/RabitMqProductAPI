@@ -36,5 +36,17 @@ namespace RabitMqProductAPI.Controllers
             _rabitMQProducer.SendProductMessage(productData);
             return productData;
         }
+        [HttpPut("updateproduct")]
+        public Product UpdateProduct(Product product)
+        {
+            
+            return productService.UpdateProduct(product);
+        }
+        [HttpDelete("deleteproduct")]
+        public bool DeleteProduct(int Id)
+        {
+           
+            return productService.DeleteProduct(Id);
+        }
     }
 }
